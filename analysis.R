@@ -71,4 +71,3 @@ small_2017_gun_incidence <- read.csv("data/2017_gun_incidence.csv")
 small_2017_gun_incidents <- select(small_2017_gun_incidence, state, year, gun_type, n_killed, n_injured)
 
 small_2017_gun_incidents <- small_2017_gun_incidents[1:10,]
-
