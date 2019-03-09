@@ -1,52 +1,52 @@
-"","state","total_gun_incidence"
-"1","Florida",631
-"2","California",623
-"3","Illinois",615
-"4","Texas",430
-"5","Ohio",309
-"6","Georgia",279
-"7","Louisiana",262
-"8","North Carolina",250
-"9","New York",246
-"10","Pennsylvania",242
-"11","Wisconsin",223
-"12","Tennessee",215
-"13","Massachusetts",213
-"14","Missouri",212
-"15","South Carolina",208
-"16","Michigan",192
-"17","Indiana",188
-"18","Alabama",179
-"19","Maryland",173
-"20","Virginia",172
-"21","District of Columbia",147
-"22","New Jersey",146
-"23","Mississippi",135
-"24","Kentucky",131
-"25","Minnesota",114
-"26","Colorado",103
-"27","Arkansas",103
-"28","Oklahoma",102
-"29","Washington",99
-"30","Connecticut",88
-"31","New Mexico",72
-"32","Kansas",72
-"33","Iowa",71
-"34","Arizona",62
-"35","West Virginia",52
-"36","Delaware",49
-"37","Nevada",46
-"38","Nebraska",45
-"39","Alaska",45
-"40","Oregon",43
-"41","Rhode Island",28
-"42","New Hampshire",24
-"43","Maine",20
-"44","South Dakota",19
-"45","Utah",19
-"46","Montana",17
-"47","Idaho",14
-"48","Wyoming",11
-"49","North Dakota",9
-"50","Vermont",8
-"51","Hawaii",5
+"state","gun_violence"
+"Illinois",5089
+"California",4588
+"Florida",4156
+"Texas",2875
+"Ohio",2701
+"Pennsylvania",2172
+"North Carolina",2141
+"New York",2031
+"Georgia",1994
+"Louisiana",1987
+"Tennessee",1874
+"Massachusetts",1761
+"Missouri",1730
+"South Carolina",1721
+"Maryland",1579
+"Indiana",1483
+"Virginia",1473
+"Alabama",1461
+"Wisconsin",1369
+"Michigan",1360
+"New Jersey",1342
+"District of Columbia",1142
+"Kentucky",1030
+"Mississippi",1029
+"Washington",881
+"Oklahoma",866
+"Arkansas",820
+"Colorado",809
+"Connecticut",780
+"Minnesota",759
+"Arizona",587
+"Iowa",586
+"Kansas",578
+"Oregon",511
+"New Mexico",448
+"Nebraska",439
+"Nevada",437
+"West Virginia",390
+"Delaware",389
+"Alaska",317
+"Utah",224
+"New Hampshire",206
+"Maine",203
+"South Dakota",199
+"Rhode Island",191
+"Montana",167
+"Idaho",163
+"North Dakota",133
+"Wyoming",91
+"Vermont",71
+"Hawaii",68

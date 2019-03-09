@@ -71,22 +71,3 @@ small_2017_gun_incidence <- read.csv("data/2017_gun_incidence.csv")
 small_2017_gun_incidents <- select(small_2017_gun_incidence, state, year, gun_type, n_killed, n_injured)
 
 small_2017_gun_incidents <- small_2017_gun_incidents[1:10,]
-
-## Wrangle dataset
-total_data <- read.csv("data/all_gun_violence_filtered.csv")
-
-total_data$date <- as.Date(total_data$date, "%m/%d/%Y")
-
-total_data$year <- format(total_data$date,"%Y")
-
-high_low_states <- total_data %>% 
-  filter(state == "Florida" | state == "Hawaii") %>% 
-  group_by(state)
-  
-
-summary_state <- count(high_low_states, year)
-
-all_data <- read.csv("data/trimed_merged.csv")
-colnames(summary_state)[3] <- "gun_violence"
-
-write.csv(summary_state, "data/highest_lowest_state.csv", row.names = F)
