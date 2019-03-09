@@ -1,13 +1,13 @@
-<<<<<<< HEAD
-# Data wrangling for map
-map_wrangling.R
-=======
+
 # Mac system file
 .DS_Store
 
 # History files
 .Rhistory
 .Rapp.history
+
+# Data wrangling for map
+map_wrangling.R
 
 # Session Data files
 .RData
@@ -38,4 +38,3 @@ vignettes/*.pdf
 # R files
 .RData
 .Rhistory
->>>>>>> 40c8bc5bd845bf74b668077d09b360c670ca4478
