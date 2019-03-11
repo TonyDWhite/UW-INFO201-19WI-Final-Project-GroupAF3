@@ -51,35 +51,3 @@ summary_all_states <- summary_all_states %>%
   filter(year != 2018 & year != 2013)
 
 write.csv(summary_all_states, "data/incidences_by_state.csv", row.names = F)
-
-## Analyze the question: Question: Is number of gun violence in the 2017 highest state 
-##at least 10 times more than that of in the 2017 lowest state
-## for all past 4 years?
-
-find_highest_state <- function(year_num) {
-  data_year <- summary_all_states %>% 
-    filter(year == year_num)
-  
-  highest <- data_year[data_year$gun_violence == max(data_year$gun_violence), ]
-  
-  highest$state
-}
-
-find_lowest_state <- function(year_num) {
-  data_year <- summary_all_states %>% 
-    filter(year == year_num)
-  
-  lowest <- data_year[data_year$gun_violence == min(data_year$gun_violence), ]
-  
-  lowest$state
-}
-
-find_incidence_ratio <- function(state1, state2, year_num) {
-  data_year <- summary_all_states %>% 
-    filter(year == year_num, (state == state1 | state == state2)) %>% 
-    arrange(-gun_violence)
-  
-  data_year[1, "gun_violence"] / data_year[2, "gun_violence"]
-}
-
-find_incidence_ratio(find_highest_state(2017), find_lowest_state(2017), 2017)
