@@ -39,7 +39,7 @@ all_data_2017 <- mutate(all_data_2017,total_gun_incidence = n())
 all_data_2017 <- unique(all_data_2017)
 all_data_2017 <- arrange(all_data_2017,-total_gun_incidence)
 
-View(all_data_2017)
+#View(all_data_2017)
 
 state_total_incidence <- select(all_data_2017,state,total_gun_incidence)
 
@@ -50,3 +50,4 @@ race_data <- read.csv("data/race_data_2017.csv", stringsAsFactors = FALSE)
 race_data <- left_join(race_data,state_total_incidence,by = "Location")
 write.csv(state_total_incidence,file = "data/state_total_incidence_2017.csv")
 write.csv(race_data,file = "data/combined_state_incidence_and_race_2017.csv")
+
