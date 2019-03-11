@@ -32,4 +32,5 @@ vignettes/*.pdf
 /cache/
 
 # develop file 
-caliber_anaysis_*
+caliber_analysis_*
+analysis_ref.R
