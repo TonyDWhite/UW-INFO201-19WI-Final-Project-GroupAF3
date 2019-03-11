@@ -1,9 +1,12 @@
+
 # Mac system file
 .DS_Store
 
 # History files
 .Rhistory
 .Rapp.history
+# Data wrangling for map
+map_wrangling.R
 
 # Session Data files
 .RData
@@ -31,6 +34,15 @@ vignettes/*.pdf
 /*_cache/
 /cache/
 
+
 # develop file 
 caliber_analysis_*
 analysis_ref.R
+
+my_ui_aaron.R
+my_server_aaron.R
+
+# R files
+.RData
+.Rhistory
+
