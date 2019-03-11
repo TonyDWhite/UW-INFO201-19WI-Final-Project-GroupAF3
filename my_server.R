@@ -55,9 +55,21 @@ cor(caliber_data$ammo_price %>% as.vector(),
     y = caliber_data$ammo_sales_percentage %>% as.vector(),
     use = "pairwise.complete.obs")
 # tony's part end here
+
+# tommy's part starts here
+us_map <- read.csv("data/map_data.csv", stringsAsFactors = FALSE)
 #####################################################
 
 my_server <- function(input, output) {
+  
+  # Tommy's part starts here
+  output$my_map <- renderPlot(
+    ggplot(data = us_map) +
+      geom_polygon(aes(fill = bins, x = long, y = lat, group = group)) + theme_void() + coord_quickmap() +
+      scale_fill_brewer(palette = "Set3") + labs(title = "Gun Violence By State", fill = "Number of Gun Related Criminal Incidents")
+    
+  )
+  
   # tony's part starts here
   output$text_intro <- renderText(
     "This section shows data about the distribution of ammo types across
