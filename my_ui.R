@@ -122,7 +122,40 @@ my_ui <- fluidPage(
                  tabPanel("notes", htmlOutput("notes"))
                )#end of tabset
              )
-    )# end of tony's part
+    ),# end of tony's part
+    
+    
+    #Aaron's Part Starts here
+    tabPanel(
+      title = "Aaron",
+      fluidPage(
+        # Application title
+        titlePanel(strong("Gun Violence in the United States and its Relationship with Race")),
+        
+        # Sidebar Layout with radio button input to specify set of countries for the table tab and plots tab and a select input to specify column of measurement.
+        sidebarLayout(
+          
+          sidebarPanel(
+            
+            selectInput(inputId = "race", label = "Race", choices = c("White", "Black", "Hispanic", "Asian", selected = "Asian"))
+            
+            
+            
+            
+            
+          ),
+          
+          mainPanel(
+            
+            tabsetPanel(type = "tabs",
+                        tabPanel("Race", titlePanel(em("Race in each state and its relationship with Gun Related Crime")),
+                                 plotOutput("race_plot"),textOutput("race_text1"),br(),textOutput("race_text2"),br(),textOutput("race_text3"))
+                        
+            )
+          )
+        )
+      )
+    )
     
   )
 )
