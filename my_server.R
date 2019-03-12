@@ -154,4 +154,17 @@ my_server <- function(input, output) {
   # Tony's part ends here
   #####################################################
   
+  # Alan's part
+  ##########################
+  
+  chosen_state <- reactive({violence_by_states %>% 
+      filter(state == input$state1 | state == input$state2)
+  })
+  
+  output$graph <- renderPlot({
+    ggplot(data = chosen_state()) +
+      geom_col(mapping = aes(x = year, y = gun_violence, fill = state),
+               position = "dodge")
+  })
+  
 }
