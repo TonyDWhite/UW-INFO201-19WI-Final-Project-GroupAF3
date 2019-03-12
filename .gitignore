@@ -1,0 +1,51 @@
+
+# Mac system file
+.DS_Store
+
+# History files
+.Rhistory
+.Rapp.history
+# Data wrangling for map
+map_wrangling.R
+
+# Session Data files
+.RData
+
+# Example code in package build process
+*-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# knitr and R markdown default cache directories
+/*_cache/
+/cache/
+
+
+# develop file
+caliber_analysis_*
+analysis_ref.R
+
+my_ui_aaron.R
+my_server_aaron.R
+
+# R files
+.RData
+.Rhistory
+
+
+.RData
+.Rhistory
