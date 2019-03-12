@@ -35,7 +35,7 @@ vignettes/*.pdf
 /cache/
 
 
-# develop file 
+# develop file
 caliber_analysis_*
 analysis_ref.R
 
@@ -46,3 +46,6 @@ my_server_aaron.R
 .RData
 .Rhistory
 
+
+.RData
+.Rhistory
