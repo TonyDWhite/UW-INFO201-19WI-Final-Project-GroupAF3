@@ -78,6 +78,9 @@ my_server <- function(input, output) {
       scale_fill_brewer(palette = "Set3") + labs(title = "Gun Violence By State", fill = "Number of Gun Related Criminal Incidents")
     
   )
+  output$map_table <- renderTable(
+    us_map[1:15, ]
+  )
   # Tommy's part ends here
   #####################################################
   
