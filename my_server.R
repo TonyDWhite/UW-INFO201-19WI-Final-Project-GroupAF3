@@ -98,7 +98,7 @@ my_server <- function(input, output) {
   #tab1 table
   output$text_table <- renderText(
     "The table below shows count and percentage of the distribution of ammo types across shooting incidents, as well as estimated 
-    sale/price data on these ammo types. one firearm of certain caliber used in an incedent is count as one entry (an incedent
+    sale/price data on these ammo types. one firearm of certain caliber used in an incident is count as one entry (an incident
     involving an .45 ACP pistol and an .233 Rem rifle would add one entry to EACH category). The ammo_price feature is counted in
     dollar per 500 rounds, and the percentage_occurence and percentage_occurence feature is counted in percentage."
   )
@@ -118,7 +118,7 @@ my_server <- function(input, output) {
   
   output$text_scatter_plot <- renderText(
     "The following reactive scatter plot plots two features (columns) of the table;  
-    also provided is the corelation coefficient of the two features"
+    also provided is the correlation coefficient of the two features"
   )
   
   correlation <- reactive({
@@ -151,9 +151,9 @@ my_server <- function(input, output) {
       p("The data and analysis of this section shows how firearms using different ammo types are
         involved in shooting incidents. In the bar chart, it is unsurprising that the most used ammo type goes
         to 9mm (1st), as it is commonly considered the most popular ammo type in US civilian market as well as law 
-        inforcement. It is also noticable that many of the more used ammo types are pistol rounds, with the exception 
+        enforcement. It is also noticable that many of the more used ammo types are pistol rounds, with the exception 
         of .22 LR (2nd), which is consider a rifle round, which is also expected, as it is a very cheap and acquirable
-        ammo type, commonly used in areas such as pest control and practice, and are used by both pistols and rilfes."),
+        ammo type, commonly used in areas such as pest control and practice, and are used by both pistols and rifles."),
       p("Also shown is the correlation between this distribution data and roughly how popular, 
         and accessible these ammo types are on US civilian markets. The correlation between sales amount and use in
         shooting incidents is about 0.7, which can be considered strong and is expected; where as the correlations between the price and
@@ -184,6 +184,13 @@ my_server <- function(input, output) {
     ggplot(data = chosen_state()) +
       geom_col(mapping = aes(x = year, y = gun_violence, fill = state),
                position = "dodge")
+  })
+  
+  output$year_violence_table <- renderTable({
+    table <- chosen_state()
+    
+    colnames(table) <- c("State", "Year", "Gun Violence")
+    table
   })
   # Alan's part ends here
   #####################################################

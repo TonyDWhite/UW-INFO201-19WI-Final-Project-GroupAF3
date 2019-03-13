@@ -77,7 +77,8 @@ my_ui <- fluidPage(
                        than other regions. In your opinion, what do you think might be
                        the reason behind the great difference in gun violence numbers
                        between these two states?")
-                    )
+                    ),
+                   tabPanel("Violence Data", tableOutput("year_violence_table"))
                   )
                )
           )
