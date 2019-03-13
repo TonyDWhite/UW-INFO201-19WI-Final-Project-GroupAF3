@@ -19,6 +19,22 @@ my_ui <- fluidPage(
   
   tabsetPanel(
     type = "tabs", 
+    # Aaron's Introduction
+    tabPanel(title = "Introduction",
+             mainPanel(
+               h3("Introduction"),
+               p("The ability to possess guns is something that we take special pride of as the citizens of the U.S. 
+                  Guns are used for many reasons from self defense to hunting. 
+                  This ability also comes with its costs. 
+                  It becomes easy for criminal to purchase and use guns. "),
+               p("Gun Violence in the United States is becoming more and more apparent year after year. 
+                  It has become common to hear about a brand new mass shooting or tragedy involving gun use. 
+                  There are gun related crimes happening on a daily basis in many parts of the country."),
+               p("For this reason, we decided to focus our research on identifying areas of the United States experiencing large amounts of gun affiliated criminal incidents. 
+                  We will examine many factors about gun violence and try to reach a conclusion based on the data used. 
+                  By doing so, we hope to draw attention to these areas experiencing this terrifying trend of gun use in our nation 
+                  so that our audience can understand where these incidents are occurring and maybe even be inspired to vote or act in a way that helps to mitigate gun use. ")
+             )),
     # Alan's part
     tabPanel(title = "Highest vs Lowest Rates of Gun Violence",
              sidebarLayout(
@@ -140,7 +156,7 @@ my_ui <- fluidPage(
       title = "Racial Distribution",
       fluidPage(
         # Application title
-        titlePanel(strong("Gun Violence in the United States and its Relationship with Race")),
+        titlePanel(h3("Gun Violence in the United States and its Relationship with Race")),
         
         # Sidebar Layout with radio button input to specify set of countries for the table tab and plots tab and a select input to specify column of measurement.
         sidebarLayout(
