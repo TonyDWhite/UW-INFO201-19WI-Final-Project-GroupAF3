@@ -189,6 +189,32 @@ my_ui <- fluidPage(
           )
         )
       )
+    ),
+    
+    #Tommy's Conclusion
+    tabPanel(title = "Conclusion",
+             mainPanel(
+               h3("Summary"),
+               p("\n", "In summation, Gun Violence is one of the most prominent issues in the nation today. 
+                 Gun-related criminal incidents are on the rise in the United States and show no sign of slowing down. 
+                 As you have now seen, there are a multitude of concepts and facets to this issue of Gun Violence."),
+               p("The first of these concepts we introduced was the highest vs the lowest rates of gun violence in 
+                 user-selected countries across multiple years. This was shown in the form of a bar chart comparing two 
+                 specified countries and color coding each bar measurement to allow the user to be able to discern which bar 
+                 represented which country. Next we displayed the geographic distribution of gun violence by rendering a map 
+                 within our shiny app which categorized each state by the number of gun-related criminal incidents in 2017. This
+                 allows the user to be able to visualize where gun violence was concentrated across the United States in 2017."),
+               p("Our third concept dealt with the relationship between gun calibers and gun-related crimes. More specifically,
+                 we visualized which calibers of guns are most frequently used in these tragic gun violence events through the use of a bar chart.
+                 Moreover, we presented the relationship between ammo sales and the percentage of gun related criminal occurences in the form of an
+                 interactive scatter plot. The fourth and final facet on the issue of Gun Violence we discussed was the relationship between race and
+                 gun violence. We sought to explain to our viewers the correlation between race and gun violence, and/or whether a correlation existed between the two at all
+                 (we specifically analyzed White Americans, African Americans, Hispanic Americans, and Asian Americans)"),
+               p("Overall, we hope our audience has learned a lot about the issue of Gun Violence in the United States, and is inspired to encourage change so that our nation
+                 can become a place of peace where we no longer have to hear so often about a new tragedy involving guns."),
+               p("GitHub Project Repo: https://github.com/TonyDWhite/UW-INFO201-19WI-Final-Project-GroupAF3")
+               )
+             
     )
     
   )
