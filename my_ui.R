@@ -21,6 +21,7 @@ my_ui <- fluidPage(
     type = "tabs", 
     # Alan's part
     tabPanel(title = "Highest vs Lowest Rates of Gun Violence",
+             titlePanel("Each State's Gun Violence Distribution"),
              sidebarLayout(
                sidebarPanel(
                  selectInput(inputId = "state1", label = "State1",
@@ -31,26 +32,32 @@ my_ui <- fluidPage(
                
                # Show a plot of the generated distribution
                mainPanel(
-                 h3("Question: Is the number of gun violence in the 2017 highest state 
-                    at least 10 times more than that of in the 2017 lowest state
-                    for all past 4 years?"),
-                 plotOutput("graph"),
-                 p("\n", strong("Description:"), "This plot allows you to select two states from the drop-down lists
-                   and compares their total gun incidence numbers side-by-side from 2014 to 2017."),
-                 p("Through this plot, you might notice that the numbers can be 
-                   significantly different between some of the states. As for our
-                   question of comparing the highest and lowest states in 2017,
-                   which will be ", paste0(high_state, " and ", low_state, ", "), "the former 
-                   indeed has at least 10 times of gun incidences for all four years
-                   than the latter from 2013 to 2017. In fact, the actual analysis shows
-                   that the numbers for ", paste0(high_state, " is ", ratio_2014, "%, ",
-                                                  ratio_2015, "%, ", ratio_2016, "%, ", ratio_2017, "% "), "more than
-                   the numbers for ", low_state, " for 2014 to 2017 respectively. This proves
-                   that some regions in the U.S. are significantly more dangerous
-                   than other regions. In your opinion, what do you think might be
-                   the reason behind the great difference in gun violence numbers
-                   between these two states?")
-                 )
+                 tabsetPanel(
+                   type = "tabs",
+                   tabPanel(
+                     title = "Bar charts",
+                     h3("Critical Question: Is the number of gun violence in the 2017 highest state 
+                        at least 10 times more than that of in the 2017 lowest state
+                        for all past 4 years?"),
+                     plotOutput("graph"),
+                     p("\n", strong("Description:"), "This plot allows you to select two states from the drop-down lists
+                       and compares their total gun incidence numbers side-by-side from 2014 to 2017."),
+                     p("Through this plot, you might notice that the numbers can be 
+                       significantly different between some of the states. As for our
+                       question of comparing the highest and lowest states in 2017,
+                       which will be ", paste0(high_state, " and ", low_state, ", "), "the former 
+                       indeed has at least 10 times of gun incidences for all four years
+                       than the latter from 2013 to 2017. In fact, the actual analysis shows
+                       that the numbers for ", paste0(high_state, " is ", ratio_2014, "%, ",
+                                                      ratio_2015, "%, ", ratio_2016, "%, ", ratio_2017, "% "), "more than
+                       the numbers for ", low_state, " for 2014 to 2017 respectively. This proves
+                       that some regions in the U.S. are significantly more dangerous
+                       than other regions. In your opinion, what do you think might be
+                       the reason behind the great difference in gun violence numbers
+                       between these two states?")
+                    )
+                  )
+               )
           )
     ),
     # tommy's part
