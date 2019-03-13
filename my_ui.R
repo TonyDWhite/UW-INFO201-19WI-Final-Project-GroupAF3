@@ -225,8 +225,16 @@ my_ui <- fluidPage(
                  (we specifically analyzed White Americans, African Americans, Hispanic Americans, and Asian Americans)"),
                p("Overall, we hope our audience has learned a lot about the issue of Gun Violence in the United States, and is inspired to encourage change so that our nation
                  can become a place of peace where we no longer have to hear so often about a new tragedy involving guns."),
-               p("GitHub Project Repo: https://github.com/TonyDWhite/UW-INFO201-19WI-Final-Project-GroupAF3")
-               )
+               
+               
+               p("GitHub Project Repo: ", a("https://github.com/TonyDWhite/UW-INFO201-19WI-Final-Project-GroupAF3")),
+
+               p("Gun Violence Data Set: ", a("https://github.com/jamesqo/gun-violence-data/blob/master/README.md")),
+               
+               p("Racial Distribution Data Set: ",  a("https://www.kff.org/other/state-indicator/distribution-by-raceethnicity/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D"))
+
+               
+            )
              
     )
     
