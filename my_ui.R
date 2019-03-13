@@ -38,7 +38,8 @@ my_ui <- fluidPage(
                p("For this reason, we decided to focus our research on identifying areas of the United States experiencing large amounts of gun affiliated criminal incidents. 
                   We will examine many factors about gun violence and try to reach a conclusion based on the data used. 
                   By doing so, we hope to draw attention to these areas experiencing this terrifying trend of gun use in our nation 
-                  so that our audience can understand where these incidents are occurring and maybe even be inspired to vote or act in a way that helps to mitigate gun use. ")
+                  so that our audience can understand where these incidents are occurring and maybe even be inspired to vote or act in a way that helps to mitigate gun use. "),
+               p(em("This Shiny App was created collaboratively by: Thomas Broch, Aaron Zhao, Tony Wang, and Alan Chun-Mien Liu"))
              )),
     # Alan's part
     tabPanel(title = "Highest vs Lowest Rates of Gun Violence",
