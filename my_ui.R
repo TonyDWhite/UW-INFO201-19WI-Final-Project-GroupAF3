@@ -89,7 +89,8 @@ my_ui <- fluidPage(
     # tony's part
     tabPanel(title = "Caliber Distribution",
              fluidPage(
-               titlePanel("Caliber(Ammo type) distribution"),
+               h3("Distributions of firearm calibers(ammo type) in shooting incidents, and how is this distribution influenced 
+                  by civilian market sales and price of these ammos"),
                textOutput("text_intro"),
                
                tabsetPanel(
@@ -115,7 +116,7 @@ my_ui <- fluidPage(
                               ),
                               selectInput(#feature_2
                                 inputId = "feature_2",
-                                label = "Select Feature 1 (y-axis)",
+                                label = "Select Feature 2 (y-axis)",
                                 choices = features,
                                 selected = "ammo_sales_percentage"
                               )
@@ -123,13 +124,13 @@ my_ui <- fluidPage(
                             
                             mainPanel(
                               plotOutput("scatter_plot"),
-                              textOutput("correlation")
+                              htmlOutput("correlation")
                             )
                             
                           )# end of sidebarLayout
                  ),
                  
-                 tabPanel("notes", htmlOutput("notes"))
+                 tabPanel("Notes", htmlOutput("notes"))
                )#end of tabset
              )
     ),# end of tony's part

@@ -4,26 +4,30 @@ library(jsonlite)
 library(ggplot2)
 
 # tony's part starts here
-caliber_lsit <- read.csv("data/caliber_data.csv", stringsAsFactors = FALSE)
+caliber_list <- read.csv("data/caliber_data.csv", stringsAsFactors = FALSE)
 
 # factor to order in bar chart
-caliber_table <- table(caliber_lsit$caliber)
+caliber_table <- table(caliber_list$caliber)
 caliber_levels <- names(caliber_table)[order(caliber_table)]
-caliber_lsit$caliber_2 <- factor(caliber_lsit$caliber, levels = caliber_levels)
-caliber_lsit$caliber_3 <- with(caliber_lsit, reorder(caliber, caliber, function(x) -length(x)))
+caliber_list$caliber_2 <- factor(caliber_list$caliber, levels = caliber_levels)
+caliber_list$caliber_3 <- with(caliber_list, reorder(caliber, caliber, function(x) -length(x)))
 rm(caliber_levels, caliber_table)
 
 # bar chart
-bar_chart <- ggplot(data = caliber_lsit, aes(factor(caliber_3))) +
+bar_chart <- ggplot(data = caliber_list, aes(factor(caliber_3))) +
   geom_bar() +
-  theme(axis.text.x = element_text(angle = 70, hjust = 1))
+  theme(axis.text.x = element_text(angle = 70, hjust = 1)) +
+  labs(
+    x = "ammo types",
+    y = "frequency"
+  )
 
 # furthur analysis: 
 # total number
-total_number <- nrow(caliber_lsit)
+total_number <- nrow(caliber_list)
 
 #frequncy list
-caliber_data <- caliber_lsit %>% 
+caliber_data <- caliber_list %>% 
   select(caliber) %>% 
   group_by(caliber) %>% 
   summarize(frequency = n()) %>% 
@@ -93,13 +97,12 @@ my_server <- function(input, output) {
   
   #tab1 table
   output$text_table <- renderText(
-    "The table below shows count and percentage of the distribution of ammo types across
-    shooting incidents, as well as estimated sale/price data on these ammo types. one firearm of
-    certain caliber used in an incedent is count as one entry (an incedent involving an .45 ACP
-    pistol and an .233 Rem rifle would add one entry to EACH category)"
+    "The table below shows count and percentage of the distribution of ammo types across shooting incidents, as well as estimated 
+    sale/price data on these ammo types. one firearm of certain caliber used in an incedent is count as one entry (an incedent
+    involving an .45 ACP pistol and an .233 Rem rifle would add one entry to EACH category). The ammo_price feature is counted in
+    dollar per 500 rounds, and the percentage_occurence and percentage_occurence feature is counted in percentage."
   )
-  #TODO: add more on the text here; explain origin of data here!
-  
+
   output$table <- renderTable(
     caliber_data
   )
@@ -128,7 +131,7 @@ my_server <- function(input, output) {
   )
   
   output$correlation <- renderText(
-    paste0("correlation between two chosen features is ", correlation())
+    paste0("<p>correlation between two chosen features is ", strong(correlation()), "</p>")
   )
   
   scatter_plot <- reactive({
@@ -144,6 +147,7 @@ my_server <- function(input, output) {
   
   output$notes <- renderText(
     paste0(
+      h4("Some quick notes on this part of data analysis"),
       p("The data and analysis of this section shows how firearms using different ammo types are
         involved in shooting incidents. In the bar chart, it is unsurprising that the most used ammo type goes
         to 9mm (1st), as it is commonly considered the most popular ammo type in US civilian market as well as law 
@@ -162,7 +166,8 @@ my_server <- function(input, output) {
         p(a("www.ammo.com", href = "www.ammo.com")), 
         p(a("www.thefirearmblog.com", href = "https://www.thefirearmblog.com/blog/2015/03/13/ammo-prices-03122015/")), 
         p(a("www.luckygunner.com", href = "http://knowledgeglue.com/what-are-the-most-popular-calibers-in-the-us/"))
-      )
+      ),
+      p("by: Tony Wang")
       )
     )
   # Tony's part ends here
