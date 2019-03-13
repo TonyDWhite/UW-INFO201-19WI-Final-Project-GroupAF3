@@ -187,16 +187,19 @@ my_server <- function(input, output) {
   })
   # Alan's part ends here
   #####################################################
-  
+
   
   #Aaron's Part Starts Here
   output$race_plot <- reactive(
-    output$race_plot <- renderPlot(
-      ggplot(data = race_data) +
-        geom_point(mapping = aes_string(x = "total_gun_incidence", y = input$race, color = "total_gun_incidence")
+    output$race_plot <- renderPlot({
+      filtered_data <- race_data %>%
+        filter(gun_violence > input$n[1] & gun_violence< input$n[2])
+      
+      ggplot(data = filtered_data) +
+        geom_point(mapping = aes_string(x = "gun_violence", y = input$race, color = "gun_violence")
         )
       
-    )
+    })
     
   )
   
@@ -213,6 +216,13 @@ my_server <- function(input, output) {
   output$race_text3 <- renderText(
     p <- "The ultimate reason that we chose to look at race and its relationship with gun crime is to clarify that race does not play a significant role, if at all, in this urgent issue. We do not intend to make any connections. Furthermore, it is important to realize that correlation does not imply causation and we should carefully screen and think about the data being presented to us. 
     "
+  )
+  
+  output$race_table <- reactive(
+    output$race_table <- renderTable({
+      filtered_data <- race_data %>%
+        filter(gun_violence > input$n[1] & gun_violence< input$n[2])
+    })
   )
   
 }

@@ -14,6 +14,11 @@ ratio_2015 <- round(find_incidence_ratio(high_state, low_state, 2015))
 ratio_2016 <- round(find_incidence_ratio(high_state, low_state, 2016))
 ratio_2017 <- round(find_incidence_ratio(high_state, low_state, 2017))
 
+
+#Aaron's 
+race_data <- read.csv("data/combined_state_incidence_and_race_2017.csv",stringsAsFactors = FALSE)
+x_range <- range(race_data$gun_violence)
+
 my_ui <- fluidPage(
   titlePanel("Gun Violence"),
   
@@ -171,7 +176,14 @@ my_ui <- fluidPage(
           
           sidebarPanel(
             
-            selectInput(inputId = "race", label = "Race", choices = c("White", "Black", "Hispanic", "Asian", selected = "Asian"))
+            selectInput(inputId = "race", label = "Race", choices = c("White", "Black", "Hispanic", "Asian", selected = "Asian")),
+            
+            br(),
+            sliderInput("n",
+                        "Range:",
+                        min = x_range[1],
+                        max = x_range[2],
+                        value = x_range)
             
             
             
@@ -182,8 +194,9 @@ my_ui <- fluidPage(
           mainPanel(
             
             tabsetPanel(type = "tabs",
-                        tabPanel("Race", titlePanel(em("Race in each state and its relationship with Gun Related Crime")),
-                                 plotOutput("race_plot"),textOutput("race_text1"),br(),textOutput("race_text2"),br(),textOutput("race_text3"))
+                        tabPanel("Race", titlePanel(h3("Race in each state and its relationship with Gun Related Crime")),
+                                 plotOutput("race_plot"),textOutput("race_text1"),br(),textOutput("race_text2"),br(),textOutput("race_text3")),
+                        tabPanel("Table", titlePanel(h3("Race and Gun Violence Data Table")), tableOutput("race_table"))
                         
             )
           )
